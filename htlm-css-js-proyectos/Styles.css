@@ -1,6 +1,7 @@
 body{
 
-    background-image: url(/Images/Fondo.jpg); ;
+    background-image: url(/Images/Fondo.jpg);
+    background-repeat: repeat-x;
 
     h1{color: blanchedalmond;
 
