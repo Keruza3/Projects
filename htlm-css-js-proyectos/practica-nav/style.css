@@ -1,0 +1,30 @@
+.header-logo{
+    background-color: salmon;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+.div-logo{
+    background-color: bisque;
+    border: 2px solid blue;
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;    
+}
+
+.div-nav{
+    border: 2px solid cyan;
+    width: 55%;
+}
+
+.logo-linux{
+    border: 3px solid black;
+    width: 100px;
+}
+.lista-nav{
+    display: flex;
+    justify-content: space-evenly
+}
