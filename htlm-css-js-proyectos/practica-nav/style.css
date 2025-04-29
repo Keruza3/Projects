@@ -18,6 +18,7 @@
 .div-nav{
     border: 2px solid cyan;
     width: 55%;
+    height: 50px;
 }
 
 .logo-linux{
@@ -26,5 +27,7 @@
 }
 .lista-nav{
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    
+
 }
