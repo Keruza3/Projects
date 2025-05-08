@@ -1,0 +1,62 @@
+/*  HEADER  */
+
+header{
+
+    background-color: lavender;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;    
+}
+
+/*
+.logo{
+
+    width: 20px;
+}
+*/
+
+body{
+    background-image: url(https://imgs.search.brave.com/K9GENlKnUGaiHmTnN-cJMfg6cR8EobzVzCdEbVcF6y8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9mb25kby1hYnN0/cmFjdG8tZGVncmFk/YWRvLXBhcnRpY3Vs/YXMtcXVlLWZsdXll/bi1jb25jZXB0by10/ZWNub2xvZ2lhLWZ1/dHVyYS1kaWdpdGFs/XzU0MjQ2Ni0xNzIu/anBnP3NlbXQ9YWlz/X2h5YnJpZA);
+}
+
+#presentacion-container{
+
+    border: 2px solid blue;
+}
+.presentacion{
+
+    border: 2px solid red;
+    width: 350px;
+    margin: auto;
+}
+
+.presentacion-img{
+
+    width: 120px;
+    float: left;
+}
+
+.pie-de-pagina{
+    color: white;
+    background-color: black;
+}
+
+#que-hago{
+    background-image: url(https://imgs.search.brave.com/moFwxUoaF1lxaJNiGNNY32lh0JdysVR5X1vqC71D7ok/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvYmxh/Y2stYW5kLXdoaXRl/LXBhbG0tdHJlZS1h/bTM1MzV1bno1Z2hl/Ym4xLmpwZw);
+}
+
+#que-hago-container{
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: 4px solid #17e0be;
+}
+
+#que-hago-container > h2{
+
+    color: #17e0be;
+}
+
+#que-hago-skills{
+    border: 2px solid #17e0be;
+    display: flex;
+}

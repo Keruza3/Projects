@@ -1,7 +1,5 @@
 body{
 
-    background-image: url(/Images/Fondo.jpg); ;
-
     h1{color: blanchedalmond;
 
         margin: auto;
@@ -20,6 +18,8 @@ body{
         color: white;
         background-color: rgb(132, 187, 187);
 
+        display: flexbox;
+
     }
     h3{
         color: aquamarine;
@@ -31,8 +31,4 @@ body{
         height: auto;
 
     }
-
 }
-
-    
-    
