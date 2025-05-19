@@ -685,4 +685,404 @@ console.timeEnd("Tiempo ejecucion");
 - Eliminar todos los datos: localStorage.clear()
 */
 
+// inventario es un array de objetos que representa todos los productos disponibles en la tienda
+let inventario = [
+    { id: 101, nombre: "Laptop", precio: 100000, stock: 15 },
+    { id: 201, nombre: "Teclado", precio: 10000, stock: 20 }
+];
 
+// La idea del array de objetos es almacenar de forma numerada, multiples objetos donde cada objeto tiene la misma estructura
+let listaChantapufis = [
+    { nombre: "Brad Pitt", edad: 17, ocupacion: "Actor" },
+    { nombre: "Angelina", edad: 60, ocupacion: "Super estrella hollywoodiense" },
+    { nombre: "El tio del cuento del tio", edad: 100, ocupacion: "Sospechosa" }
+];
+
+// iteracion de array de objetos con for clasico
+for(let i = 0; i < listaChantapufis.length; i++) {
+    console.log(listaChantapufis[i].ocupacion);
+}
+
+// forEach()
+listaChantapufis.forEach(chantapufi => {
+    console.log(`Nombre: ${chantapufi.nombre}, ocupacion: ${chantapufi.ocupacion}`);
+});
+
+// filter() para seleccionar subconjunto
+let chantapufisAdultos = listaChantapufis.filter(chanta => chanta.edad > 18);
+console.log(chantapufisAdultos);
+
+    //////////////////
+      // ITERACION// 
+
+    /* for clasico
+        - Maximo control: break, continue
+        - Desventajas: Mas verboso
+    */
+
+
+/* forEach
+array.forEach((elemento, indice, arrayOriginal)=> {
+        console.log(elemento, indice);
+});
+
+    - Ventajas: Sintaxis lipia, no necesita contador
+    - Desventajas: no se puede romper el bucle 
+
+*/
+
+//imprimir elementos
+const colores = ["rojo", "verdadero", "azul"];
+colores.forEach(color => console.log(color)); 
+
+//modificar array externo
+const numeros = [1, 2 , 3];
+const dobles = [];
+numeros.forEach(num => dobles.push(num * 2));
+console.log(dobles);
+
+//actualizar propiedades
+const estudiantes = [
+    {nombre: "Angelina", nota: 1},
+    {nombre: "ivo", nota: 2},
+    {nombre: "pepito", nota: 10},
+];
+
+estudiantes.forEach(estudiante => {
+    estudiante.aprobado = estudiante.nota >= 7;
+})
+
+console.log(estudiantes);
+
+/* map()
+const nuevosValores = array.map(elemento => elemento * 2);
+
+    - proposito: Trasnformar cada elemento
+    - Devuelve: Nuevo Array con los resultados
+*/
+
+// Crear un array de cuadrados
+
+const nums = [1, 2 , 3, 4];
+const cuadrados = nums.map(num => num * num);
+console.log(cuadrados);
+
+// Convertir a strings
+
+const edades = [25, 30, 18];
+const edadesStr = edades.map(edad => `Tengo ${edad} años`);
+console.log(edadesStr); 
+
+const empleados = [
+    {id: 1, nombre: "Angelina", nota: 1},
+    {id: 2, nombre: "ivo", nota: 2},
+    {id: 3, nombre: "pepito", nota: 10},
+];
+
+const nombreEmpleados = empleados.map(emp => emp.nombre);
+console.log(nombreEmpleados);
+
+/* filter()
+const filtrados = array.filter(elemento => elemento > 10);
+
+  - Proposito: Seleccionar elementos que cumplan la condicion
+  - Retorna: Nuevo array con elementos filtrados
+*/
+
+
+// filtrar numeros pares
+const numeros2 = [1, 2, 3, 4, 5, 6];
+const pares = numeros2.filter(num => num % 2 === 0);
+console.log(pares)
+
+// filtrar string largos
+const palabras = ["Hola", "Adios", "Bienvenido", "Ok"];
+const palabrasLargas = palabras.filter(palabra => palabras.length > 4);
+console.log(palabrasLargas);
+
+// filtrar por propiedad
+
+const personas = [
+    {nombre: "Angelina", edad: 20},
+    {nombre: "ivo", edad: 17},
+    {nombre: "pepito", edad: 10},
+];
+
+const mayores = personas.filter(persona => persona.edad >= 18);
+console.log(mayores);
+
+// filtrar multiples condiciones
+const ordenes = [
+    {productoid: 101, nombre: "laptop", cantidad: 1, completada: true},
+    {productoid: 201, nombre: "teclado", cantidad: 2, completada: true},
+    {productoid: 301, nombre: "raton", cantidad: 3, completada: false}
+];
+
+const ordenesMultiplesCompletadas = ordenes.filter(orden => {
+    return orden.cantidad > 1 && orden.completada
+});
+
+console.log(ordenesMultiplesCompletadas);
+
+/* reduce()
+const suma = array.reduce((acumulador, elemento) => acumulador + elemento, 0)
+
+    - Proposito: Reducir el array a un unico valor
+    - Retorna: Valor acumulado
+*/
+
+// Sumar elementos
+const numeros3 = [10, 20, 30];
+const suma = numeros3.reduce((acum, num) => acum + num, 0);
+console.log(suma);
+
+// Concatenar string
+const palabras2 = ["Hola", "mundo", "JavaScript"];
+const frase = palabras2.reduce((acumulador, palabra) => acumulador + " " + palabra, "");
+
+console.log(frase);
+
+// Sumar propiedades
+
+let inventario2 = [
+    {id: 101, nombre: "laptop", precio: 1000000, cantidad: 1},
+    {id: 201, nombre: "teclado", precio: 10000, cantidad: 2},
+    {id: 301, nombre: "raton", precio: 3000, cantidad: 3}
+];
+
+const totalInventario = inventario.reduce((acumulador, producto) => acumulador + (producto.cantidad * producto.precio), 0);
+
+console.log(totalInventario);
+
+/* find() y findIndex()
+const encontrado = array.find(elemento => elemento.id === 123);
+const indice = array.findIndex(elemento => elemento.id ===123);
+
+    - Proposito Buscar primer elemento que cumpla condicion
+    - Retorna: elemento o indice
+*/
+
+// Buscar numero
+const numeros4 = [5, 12, 8, 130, 44];
+const encontrado = numeros4.find(num => num > 10);
+console.log(encontrado);
+
+// Buscar objeto por propiedad
+const usuarios2 = [
+
+
+][
+    {id: 1, nombre: "Angelina", activo: true},
+    {id: 2, nombre: "ivo", activo: false},
+    {id: 3, nombre: "pepito", activo: true}
+];
+
+const usuarioActivo = usuarios2.find(user => user.activo);
+console.log(usuarioActivo);
+
+// Econtrar indice objeto
+
+const indice= numeros4.find(num => num >100);
+console.log(indice);
+
+//Econtrar indice de objeto
+const tareas =[ 
+    {id: 1, descripcion: "ASDASDASDA", completada: true},
+    {id: 2, descripcion: "ASDASDASDAasdasd", completada: false},
+    {id: 3, descripcion: "ASDASDASasdas dDA", completada: true},
+];
+
+const indiceTarea = tareas.findIndex(tarea => tarea.completada);
+console.log(indiceTarea);
+
+
+/* for...of
+
+for(const elemento of array){
+    console.log(elemento);
+    if(elemento === "stop") {
+        break
+    }
+}
+
+
+    - Ventajas: Sintaxis limpia, permite break/continue
+    - Desventajas: No provee indice automatico
+*/
+
+//iterar con posibilidades de break
+
+const simbolos = ["$", "?", ")", "!"];
+for(const simbolos of simbolos) {
+    console.log(simbolo);
+
+    if(simbolo === ")") {
+        break;
+    }
+}
+
+//iterar objetos
+
+const empleados2 = [
+    {id: 1, nombre: "pepe", salario: 1000000},
+    {id: 1, nombre: "pepi", salario: 10000000},
+    {id: 1, nombre: "pepa", salario: 100000}
+];
+
+for(const  empleado of empleados2) {
+
+    if(empleado.salario > 2000) {
+        console.log(`El empleado ${empleado.nombre} ganas mas de $10000`);
+        break
+    }
+}
+
+/* Iteracion en objetos con 
+    - for ... in
+    - Object.keys()
+    - Object.values()
+    - Objects.entries()
+*/
+
+// for ... in para iterar claves
+const estudiantes2 = {
+    nombre: "Cosme",
+    edad: 21,
+    curso: "jS"
+};
+
+for(const propiedad in estudiante2) {
+    console.log(`Propiedad: ${propiedad}. valor: ${estudiante[propiedad]}`);
+}
+
+//Objects.keys() para obtener claves
+const claves = Object.keys(estudiante);
+console.log(claves);
+claves.forEach(clave => console.log(clave));
+
+// Object.values() para obtener valores
+const valores = Object.values(estudiante);
+console.log(valores);
+valores.forEach(valor => console.log(valor));
+
+/* Metodos de comprobacion con some() y every()
+
+const algunoCumple = array.some(elemento => elemento > 0);
+const todosCumplen = array.every(elemento => elemento > 0);
+*/
+
+// Verificar si hay numeros pares
+
+const numeros5 = [1, 3, 5, 6, 7];
+
+const hayPares = numeros5.some(num = num % 2 === 0);
+console.log(hayPares);
+
+//verificar si hay usuarios admin
+
+const usuarios3 = [
+    {id: 1, nombre: "pepe", rol: "user"},
+    {id: 2, nombre: "pepi", rol: "admin"},
+    {id: 3, nombre: "pepa", rol: "user"}
+];
+
+const existeAdmin = usuarios3.some(user.rol === "admin");
+console.log(existeAdmin);
+
+//verificar si son todos positivos
+const todosPositivos = numeros5.every(num => num > 0);
+console.log(todosPositivos);
+
+// Verificar si todos aprobaron
+const estudiantesNoChantas = [
+    { id: 1, nombre: "Angelina", nota: 8 },
+    { id: 2, nombre: "Brad", nota: 6 },
+    { id: 3, nombre: "El tio", nota: 10 }
+];
+
+const todosAprobaron = estudiantesNoChantas.every(est => est.nota >= 6);
+console.log(todosAprobaron);
+
+
+/* Compparacion de rendimineto
+    - Bucles clasicos (for, while) son los mas rapidos para iteraciones simples
+    - Metodos funcionales (map, filter) son mas lentos pero mas expresivos
+    - for..of ofrece buen equilibrio entre rendimineto y legibilidad
+
+RECOMENDACIONES de uso
+
+    - Trandormar aaray: map()
+    - Filtrar elementos: filter()
+    - Reducir a un valor: reduce()
+    - Buscar elementos: find() o findIndex()
+    - Necesitamos romper bucles: for o for...of 
+    - No necesitamos romper bucles: for o forEach
+    - verificar condiciones: some() every()
+*/
+
+
+
+            /////////////////////
+            ///Programacion VI///
+
+//Manipulaicon de DOM en JavaScript y eventos
+
+
+        ///////////////////////
+        //Introduccion al DOM//
+
+/* El HTML de arriba sería representado en el DOM como una estructura en forma de árbol, donde document es el objeto que representa toda la página web
+
+    - document
+        - html
+            - head
+                - title
+            - body
+                - h1
+                - p
+
+¿Cómo funciona la manipulación del DOM?
+- JavaScript puede acceder y modificar cualquier elemento del DOM usando el objeto global document
+- JavaScript puede
+    - Modificar el contenido (texto, atributos, clase)
+    - Añadir o eliminar elementos del DOM
+    - Escuchar eventos del usuario (clics, teclados, etc)
+*/
+
+        /////////////////////////////////////
+        // Seleccion de elementos en el DOM//
+
+/* getlementById()
+    - Este metodo selecciona un unico elemento por su ID, si no lo encuentra, devuelve null
+    - solo selecciona el primer elemento que coincida  con el ID
+*/
+
+let titulo = document.getElementBy("titulo");
+
+console.log(titulo);
+console.log(titulo.textContent);
+
+/* querySelector()
+    - selecciona el PRIMER elemento que coincida con un selector de CSS (por clase, id, nombre de etiqueta)
+
+
+   querySelectorAll()
+    - selecciona TODOS los elementos que coincidan con el selector CSS y devuelve NodeList(similar a un array)
+
+Otro listado extra de selectores
+    - getElementById() Seleccionar un elemento por su ID
+    - getElementByClassname() selecciona todos los elementos que tengan una clase especifica 
+    - getElementBytagName selecciona todos los elementod de un tipo de etiqueta
+    -querySelector/all selecciona el primer o todos los elementos que coincidadn con un selector de CSS
+*/
+
+let primerParafo = document.querySelector(".mensaje");
+
+console.log(primerParafo.textContent);
+
+let parrafos = document.querySelectorAll(".mensaje");
+console.log(parrafos);
+
+parrafos.forEach(parrafo => console.log(parrafo.textContent));
+
+//modificar contenidos y atributos
