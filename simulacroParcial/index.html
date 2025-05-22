@@ -1,0 +1,82 @@
+<!--
+### 1. Header `<header>`
+Esa estructura debe tener un header que incluya un nombre logo, un input para buscar y un apartado para imprimir info del carrito
+
+- header id: encabezado
+    - div: clase logo
+    - input: clase barra busqueda
+    - div: clase carrito
+
+### 2. Main `<main>`, `<section>`
+Nuestro main va a tener dos section donde vamos a poder visualizar nuestro array de productos
+
+- section: clase seccion-productos
+    - h2 de titulo Nuestros productos
+    - div: clase container productos
+
+- section: clase seccion-carrito
+    - h2 de titulo carrito
+    - ul id: items-carrito
+    - div clase: total carrito
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+</head>
+<body>
+    <header id="encabezado">
+
+        <div class="logo">
+            <img src="https://elparaisodepaso.com.ar/img/webp/logo.webp?v=2" alt="Logo">
+        </div>
+
+        <input type="text" class="barra-busqueda" placeholder="Buscar...">
+
+        <div class="carrito">
+            🛒
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="seccion-productos">
+            <h2>Productos</h2>
+            <div class="container-productos">
+
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/L-65.B518-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/L-65.B513-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/L-65.B515-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/L-67.B941.4-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/L-67.B942.4-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/523-F240-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/523-F213-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/524-R98-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/AFANTTRORKNU-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/536-5981-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/536-4934-1.webp?v=106" alt="Producto"></div>
+                <div class="producto"><img src="https://elparaisodepaso.com.ar/imagenes/prod-webp/536-6107-1.webp?v=106" alt="Producto"></div>
+
+            </div>
+        </section>
+
+        <section class="seccion-carrito">
+            <h2>Carrito</h2>
+
+            <ul id="items-carrito">
+                <!-- Acá se agregan productos al carrito dinámicamente -->
+            </ul>
+
+            <div class="total-carrito">
+                <!-- Total del carrito -->
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

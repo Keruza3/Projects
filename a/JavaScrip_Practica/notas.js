@@ -1086,3 +1086,12 @@ console.log(parrafos);
 parrafos.forEach(parrafo => console.log(parrafo.textContent));
 
 //modificar contenidos y atributos
+
+
+//...
+
+
+///////////
+//EVENTOS//
+
+// Permite
